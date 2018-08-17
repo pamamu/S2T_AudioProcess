@@ -107,4 +107,4 @@ venv.bak/
 .idea
 
 
-notebook/Tests\.ipynb
+/notebook/Tests.ipynb
