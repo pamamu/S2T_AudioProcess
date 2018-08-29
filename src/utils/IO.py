@@ -4,28 +4,60 @@ import re
 import src.utils.config as config
 
 
-def check_file(file_path):
+def check_file(file_path) -> None:
     """
     Method that checks the availability of the file which indicates the path.
+
     :param file_path: Path of the file to be checked
-    :return: None
+    :type file_path: str
+
+    :return: Nothing
+    :rtype: None
     :raise FileNotFoundError: The file doesn't exist o has a non-compatible extension.
+
+    :Example:
+
+    >>> check_file("/home/user/file.mp3") # Correct path and extension file
+    None
+
+    >>> check_file("/home/user/file.docx") # Incorrect path and extension file
+    FileNotFoundError - Extension Error
+
     """
-    if not os.path.isfile(file_path): raise FileNotFoundError("File not found")
+    if not os.path.isfile(file_path):
+        raise FileNotFoundError("File not found")
     filename, file_extension = os.path.splitext(file_path)
     if not re.match(r"(^.[a-zA-Z0-9]+$)", file_extension) or \
             file_extension[1:] not in config.audio_extensions:
         raise FileNotFoundError("Extension Error")
 
 
-def folder_to_dict(path, max_depth):
+def folder_to_dict(path, max_depth) -> dict:
     """
     Method that given a parent folder and a number of iterations returns a dictionary with the folder structure
+
     :param path: Initial path
-    :param max_depth: Maximum number of iterations - depth of scanning.
-    <2 indicates that only the given folder is analyzed
+    :type path: str
+    :param max_depth: Maximum number of iterations - depth of scanning. Less than 2 indicates that only the given
+        folder is analyzed
+    :type max_depth: int
+
     :return: Dictionary with file structure
+    :rtype: dict
     :raise FileNotFoundError: The file or folder doesn't exist
+
+    :Example:
+
+    >>> folder_to_dict("/usr/local/share/man", 2) # Correct path
+    {'name': 'man', 'type': 'folder', 'children':  [{'name': 'whatis', 'type': 'file'},
+                                                    {'name': 'man1', 'type': 'folder'}]}
+
+    >>> folder_to_dict("/usr/local/share/man", 1) # Correct path
+    {'name': 'man', 'type': 'folder'}
+
+    >>> folder_to_dict("/home/wrongfolder") # Incorrect path
+    FileNotFoundError
+
     """
     if not os.path.exists(path):
         raise FileNotFoundError
@@ -33,7 +65,7 @@ def folder_to_dict(path, max_depth):
     d = {'name': os.path.basename(path)}
     if os.path.isdir(path):
         d['type'] = "folder"
-        if (max_depth > 0):
+        if max_depth > 0:
             d['children'] = [folder_to_dict(os.path.join(path, x), max_depth) for x in os.listdir(path)]
     else:
         d['type'] = "file"
