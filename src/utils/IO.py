@@ -4,15 +4,15 @@ import re
 import src.utils.config as config
 
 
-def check_file(file_path) -> None:
+def check_file(file_path) -> tuple:
     """
     Method that checks the availability of the file which indicates the path.
 
     :param file_path: Path of the file to be checked
     :type file_path: str
 
-    :return: Nothing
-    :rtype: None
+    :return: It will return the filename and the extension if there isn't any error
+    :rtype: tuple
     :raise FileNotFoundError: The file doesn't exist o has a non-compatible extension.
 
     :Example:
@@ -27,9 +27,26 @@ def check_file(file_path) -> None:
     if not os.path.isfile(file_path):
         raise FileNotFoundError("File not found")
     filename, file_extension = os.path.splitext(file_path)
+    filename = os.path.basename(filename)
     if not re.match(r"(^.[a-zA-Z0-9]+$)", file_extension) or \
             file_extension[1:] not in config.audio_extensions:
         raise FileNotFoundError("Extension Error")
+    return filename, file_extension
+
+
+def check_folder(folder_path, creation=False):
+    """
+    TODO
+
+    :param folder_path:
+    :param creation:
+    :return:
+    """
+    if not os.path.isdir(folder_path):
+        if creation:
+            os.makedirs(folder_path)
+        else:
+            raise FileNotFoundError("Folder not found")
 
 
 def folder_to_dict(path, max_depth) -> dict:
