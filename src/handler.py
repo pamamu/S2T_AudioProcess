@@ -1,5 +1,6 @@
-from Audio import Audio
+from src.Audio import Audio
 import json
+
 
 class AudioProcessHandler:
     def __init__(self, config):

@@ -1,10 +1,29 @@
 import os.path
 import re
+import json
 
-import src.utils.config as config
+
+def get_IO_config() -> dict:
+    """
+    TODO DOCUMENTATION
+    :return:
+    """
+    io_config_file = "src/configs/IO_config.json"
+    io_config = json.loads(open(io_config_file).read())
+    return io_config
+
+def get_tmp_folder():
+    """
+    TODO DOCUMENTATION
+    :return:
+    """
+    io_config = get_IO_config()
+    if not os.path.isdir(io_config['tmp_folder']):
+        os.mkdir(io_config['tmp_folder'])
+    return io_config['tmp_folder']
 
 
-def check_file(file_path) -> tuple:
+def check_audio_file(file_path) -> tuple:
     """
     Method that checks the availability of the file which indicates the path.
 
@@ -17,19 +36,22 @@ def check_file(file_path) -> tuple:
 
     :Example:
 
-    >>> check_file("/home/user/file.mp3") # Correct path and extension file
+    >>> check_audio_file("/home/user/file.mp3") # Correct path and extension file
     None
 
-    >>> check_file("/home/user/file.docx") # Incorrect path and extension file
+    >>> check_audio_file("/home/user/file.docx") # Incorrect path and extension file
     FileNotFoundError - Extension Error
 
     """
+
+    io_config = get_IO_config()
+
     if not os.path.isfile(file_path):
         raise FileNotFoundError("File not found")
     filename, file_extension = os.path.splitext(file_path)
     filename = os.path.basename(filename)
     if not re.match(r"(^.[a-zA-Z0-9]+$)", file_extension) or \
-            file_extension[1:] not in config.audio_extensions:
+            file_extension[1:] not in io_config['allowed_extensions']:
         raise FileNotFoundError("Extension Error")
     return filename, file_extension
 

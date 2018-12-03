@@ -1,3 +1,13 @@
+"""
+TODO DOCUMENTATION
+"""
+
+from utils.IO import check_audio_file, get_tmp_folder
+from utils.audio_tools import convert_audio, get_working_format
+import json
+from os import path
+
+
 class Audio:
 
     def __init__(self,
@@ -30,42 +40,40 @@ class Audio:
             self.output_format = output_format
 
     def check_up(self):
-        # TODO Comprobar que existen los ficheros de configuracion
-        # TODO Cargar ficheros de configuracion
-        # TODO Comprobar informacion de ficheros de configuracion
-        # TODO Comprobar Audio-Configuracion
-        pass
+        """
+        TODO DOCUMENTATION
+        :return:
+        """
+        check_audio_file(self.audio_path)
+        audio_name = path.basename(self.audio_path).split('.')[0]
+        audio_conv_path = convert_audio(self.audio_path,
+                                        path.join(get_tmp_folder(), audio_name),
+                                        self.samplerate,
+                                        self.n_channels,
+                                        self.bitdepth,
+                                        get_working_format())
+        print(audio_conv_path)
 
     def clean_audio(self):
+        """
+        TODO DOCUMENTATION
+        :return:
+        """
+        print("LIMPIAR AUDIO")
         pass
 
     def split_audio(self):
+        """
+        TODO DOCUMENTATION
+        :return:
+        """
+        print("SEPARAR AUDIO")
         pass
 
     def process_output(self):
+        """
+        TODO DOCUMENTATION
+        :return:
+        """
+        print("PROCESAR SALIDA")
         pass
-
-# self.origin_path = origin_path
-# self.destination_path = destination_path
-# self.filename, self.file_extension = check_file(self.origin_path)
-# check_folder(self.destination_path, True)
-# self.fullaudio_path = path.join(destination_path, output_filename + '.' + output_extension)
-# self.convert(samplerate, n_channels, bitdepth, self.fullaudio_path)
-
-# def convert(self, _samplerate, _n_channels, _bitdepth, output_file):
-#     """
-#     TODO
-#
-#     :param _samplerate:
-#     :param _n_channels:
-#     :param _bitdepth:
-#     :param output_file:
-#     :return:
-#     """
-#     converter = sox.Transformer()
-#     converter.channels(_n_channels)
-#     converter.convert(samplerate=_samplerate, n_channels=_n_channels, bitdepth=_bitdepth)
-#     converter.build(self.origin_path, output_file)
-#
-# def split_audio(self):
-#     pass
