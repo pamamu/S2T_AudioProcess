@@ -1,9 +1,10 @@
 import os.path
 import re
 import json
+import shutil
 
 
-def get_IO_config() -> dict:
+def get_io_config() -> dict:
     """
     TODO DOCUMENTATION
     :return:
@@ -12,12 +13,13 @@ def get_IO_config() -> dict:
     io_config = json.loads(open(io_config_file).read())
     return io_config
 
+
 def get_tmp_folder():
     """
     TODO DOCUMENTATION
     :return:
     """
-    io_config = get_IO_config()
+    io_config = get_io_config()
     if not os.path.isdir(io_config['tmp_folder']):
         os.mkdir(io_config['tmp_folder'])
     return io_config['tmp_folder']
@@ -44,7 +46,7 @@ def check_audio_file(file_path) -> tuple:
 
     """
 
-    io_config = get_IO_config()
+    io_config = get_io_config()
 
     if not os.path.isfile(file_path):
         raise FileNotFoundError("File not found")
@@ -109,3 +111,7 @@ def folder_to_dict(path, max_depth) -> dict:
     else:
         d['type'] = "file"
     return d
+
+
+def clean_tmp_folder() -> None:
+    shutil.rmtree(get_tmp_folder())

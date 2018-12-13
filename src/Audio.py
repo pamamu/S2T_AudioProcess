@@ -2,8 +2,8 @@
 TODO DOCUMENTATION
 """
 
-from utils.IO import check_audio_file, get_tmp_folder
-from utils.audio_tools import convert_audio, get_working_format
+from utils.IO import check_audio_file, get_tmp_folder, clean_tmp_folder
+from utils.audio_tools import convert_audio, get_working_format, apply_filters, normalize_audio, noise_removal
 import json
 from os import path
 
@@ -12,16 +12,16 @@ class Audio:
 
     def __init__(self,
                  audio_path=None,
-                 samplerate=None,
-                 n_channels=None,
-                 bitdepth=None,
+                 output_samplerate=None,
+                 output_n_channels=None,
+                 output_bitdepth=None,
                  output_format=None,
                  data=None):
 
         required_params = ['audio_path',
-                           'samplerate',
-                           'n_channels',
-                           'bitdepth',
+                           'output_samplerate',
+                           'output_n_channels',
+                           'output_bitdepth',
                            'output_format']
         pre = ""
         if bool(data):
@@ -34,10 +34,13 @@ class Audio:
 
         if pre == "":
             self.audio_path = audio_path
-            self.samplerate = samplerate
-            self.n_channels = n_channels
-            self.bitdepth = bitdepth
+            self.output_samplerate = output_samplerate
+            self.output_n_channels = output_n_channels
+            self.output_bitdepth = output_bitdepth
             self.output_format = output_format
+
+        clean_tmp_folder()
+        self.raw_audio = ""
 
     def check_up(self):
         """
@@ -48,20 +51,21 @@ class Audio:
         audio_name = path.basename(self.audio_path).split('.')[0]
         audio_conv_path = convert_audio(self.audio_path,
                                         path.join(get_tmp_folder(), audio_name),
-                                        self.samplerate,
-                                        self.n_channels,
-                                        self.bitdepth,
+                                        self.output_samplerate,
+                                        self.output_n_channels,
+                                        self.output_bitdepth,
                                         get_working_format())
-        print(audio_conv_path)
+
+        self.raw_audio = audio_conv_path
 
     def clean_audio(self):
         """
         TODO DOCUMENTATION
         :return:
         """
-        print("LIMPIAR AUDIO")
-        pass
-
+        apply_filters(self.raw_audio)
+        normalize_audio(self.raw_audio)
+        noise_removal(self.raw_audio)
     def split_audio(self):
         """
         TODO DOCUMENTATION
@@ -75,5 +79,6 @@ class Audio:
         TODO DOCUMENTATION
         :return:
         """
+        clean_tmp_folder()
         print("PROCESAR SALIDA")
         pass
