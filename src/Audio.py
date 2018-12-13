@@ -2,10 +2,10 @@
 TODO DOCUMENTATION
 """
 
+from os import path
+
 from utils.IO import check_audio_file, get_tmp_folder, clean_tmp_folder
 from utils.audio_tools import convert_audio, get_working_format, apply_filters, normalize_audio, noise_removal
-import json
-from os import path
 
 
 class Audio:
@@ -65,7 +65,8 @@ class Audio:
         """
         apply_filters(self.raw_audio)
         normalize_audio(self.raw_audio)
-        noise_removal(self.raw_audio)
+        print(noise_removal(self.raw_audio))
+
     def split_audio(self):
         """
         TODO DOCUMENTATION

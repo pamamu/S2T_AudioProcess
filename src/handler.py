@@ -1,5 +1,6 @@
-from src.Audio import Audio
 import json
+
+from src.Audio import Audio
 
 
 class AudioProcessHandler:

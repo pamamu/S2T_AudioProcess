@@ -1,9 +1,10 @@
-import sox
-import os
 import json
-from pydub import AudioSegment, silence
+import os
+
+import sox
+from pydub import AudioSegment
+
 from utils.IO import get_tmp_folder
-from pydub.playback import play
 
 
 def get_audio_config() -> dict:
@@ -108,9 +109,10 @@ def normalize_audio(origin_path, destination_path=""):
         normalize.build(origin_path, destination_path)
 
 
-def noise_removal(origin_path, destination_path=""):
+def noise_removal(origin_path, destination_path="", return_json=True):
     """
     TODO DOCUMENTATION
+    :param return_json:
     :param origin_path:
     :param destination_path:
     :return:
@@ -173,3 +175,9 @@ def noise_removal(origin_path, destination_path=""):
         os.rename(destination_path, origin_path)
     else:
         noise_remove.build(origin_path, destination_path)
+
+    if return_json:
+        from itertools import groupby, count
+        audio_list = [(list(g)) for k, g in
+                      groupby([*zip(*audio_chunks)][0], key=lambda i, j=count(): i - next(j))]
+        return [(min(l), max(l)) for l in audio_list]
