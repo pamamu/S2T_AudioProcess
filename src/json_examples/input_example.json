@@ -1,0 +1,9 @@
+{
+  "audio_path": "/Users/pablomaciasmunoz/Dev/WS_TFG/S2T_AudioProcess/resources/audio/original/cadenaser_hoyporhoy_20170531_090000_100000_voz1.wav",
+  "transcription_path": "/home/pablo/Dev/TFG/S2T_AudioProcess/resources/audio/cadenaser_hoyporhoy_20180831_120000_122000_2.wav",
+  "output_folder": "/Users/pablomaciasmunoz/Dev/WS_TFG/S2T_AudioProcess/resources/audio/out",
+  "output_samplerate": 16000,
+  "output_n_channels": 1,
+  "output_bitdepth": 16,
+  "output_format": "wav"
+}
