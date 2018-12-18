@@ -3,8 +3,9 @@ import os
 
 import sox
 from pydub import AudioSegment
+from pydub.playback import play
 
-from utils.IO import get_tmp_folder
+from utils.IO import get_tmp_folder, get_tmp_splitted_folder
 
 
 def get_audio_config() -> dict:
@@ -125,11 +126,12 @@ def noise_removal(origin_path, destination_path="", return_json=True):
     audio_chunks = []
     noise_chunks = []
     max_noise_duration = get_audio_config()['max_noise_duration']
+    max_noise_level = get_audio_config()['max_noise_level']
     aux_noise = []
 
     for i, chunk in enumerate(original_audio_splited):
         data = (i, chunk)
-        if chunk.dBFS > -25:
+        if chunk.dBFS > max_noise_level:
             if len(aux_noise) > max_noise_duration:
                 noise_chunks += aux_noise
             else:
@@ -180,4 +182,53 @@ def noise_removal(origin_path, destination_path="", return_json=True):
         from itertools import groupby, count
         audio_list = [(list(g)) for k, g in
                       groupby([*zip(*audio_chunks)][0], key=lambda i, j=count(): i - next(j))]
-        return [(min(l), max(l)) for l in audio_list]
+        return [(l[0], l[-1]) for l in audio_list]
+
+
+def split_audio(origin_path, periods=[]) -> list:
+    """
+    TODO DOCUMENTATION
+    :param origin_path:
+    :param periods:
+    :return:
+    """
+    original_audio = AudioSegment.from_wav(origin_path)
+    original_audio_splited = list(original_audio[::1])
+    print(len(original_audio_splited))
+    if len(periods) == 0:
+        min_silence_duration = get_audio_config()['min_silence_duration']
+        max_silence_level = get_audio_config()['max_silence_level']
+
+        audio_chunks = []
+        aux_silence = []
+
+        for i, chunk in enumerate(original_audio_splited):
+            if chunk.dBFS > max_silence_level:
+                if len(aux_silence) < min_silence_duration:
+                    audio_chunks += aux_silence
+                aux_silence.clear()
+                audio_chunks.append(i)
+
+            else:  # SILENCE
+                aux_silence.append(i)
+
+        if len(aux_silence) < min_silence_duration:
+            audio_chunks += aux_silence
+
+        from itertools import groupby, count
+        audio_list = [(list(g)) for k, g in
+                      groupby(audio_chunks, key=lambda i, j=count(): i - next(j))]
+        periods = [(l[0], l[-1]) for l in audio_list]
+
+
+    audio_splited = [original_audio_splited[period[0]:period[1]] for period in periods]
+
+    filenames = []
+    info = []
+    for i, segment in enumerate(audio_splited):
+        audio_segment = sum(segment, AudioSegment.empty())
+        filename = os.path.join(get_tmp_splitted_folder(), '{}.wav'.format(i))
+        filenames.append(filename)
+        info.append(periods[i])
+        audio_segment.export(filename, format='wav')
+    return filenames, info

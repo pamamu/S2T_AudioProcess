@@ -25,6 +25,13 @@ def get_tmp_folder():
     return io_config['tmp_folder']
 
 
+def get_tmp_splitted_folder():
+    folder = os.path.join(get_tmp_folder(), 'audio_segments')
+    if not os.path.isdir(folder):
+        os.mkdir(folder)
+    return folder
+
+
 def check_audio_file(file_path) -> tuple:
     """
     Method that checks the availability of the file which indicates the path.
@@ -111,6 +118,31 @@ def folder_to_dict(path, max_depth) -> dict:
     else:
         d['type'] = "file"
     return d
+
+
+def move_files(files, folder, audio_name):
+    check_folder(folder, True)
+    clean_folder(os.path.join(folder, audio_name))
+    check_folder(os.path.join(folder, audio_name), True)
+    destination_paths = []
+    for file in files:
+        basename = os.path.basename(file)
+        destination_path = os.path.join(folder, audio_name, basename)
+        destination_paths.append(destination_path)
+        shutil.move(file, destination_path)
+    return destination_paths
+
+
+def save_json(info, folder, audio_name):
+    check_folder(os.path.join(folder, audio_name), True)
+    out_file = os.path.join(folder, audio_name, 'info.json')
+    with open(out_file, 'w') as fp:
+        json.dump(info, fp, indent=2)
+
+
+def clean_folder(folder) -> None:
+    if os.path.isdir(folder):
+        shutil.rmtree(folder)
 
 
 def clean_tmp_folder() -> None:

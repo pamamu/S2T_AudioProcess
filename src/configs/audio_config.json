@@ -2,5 +2,8 @@
   "working_format": "wav",
   "chunk_size": 100,
   "max_noise_duration": 50,
-  "noise_tolerance": 0.20
+  "noise_tolerance": 0.20,
+  "max_noise_level": -25,
+  "min_silence_duration": 500,
+  "max_silence_level": -40
 }
