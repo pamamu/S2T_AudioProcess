@@ -1,0 +1,327 @@
+[
+  {
+    "path": "/Users/pablomaciasmunoz/Dev/WS_TFG/S2T_AudioProcess/resources/audio/out/audio_5m/0.wav",
+    "start_time": 0.0,
+    "end_time": 2.533
+  },
+  {
+    "path": "/Users/pablomaciasmunoz/Dev/WS_TFG/S2T_AudioProcess/resources/audio/out/audio_5m/1.wav",
+    "start_time": 2.797,
+    "end_time": 11.875
+  },
+  {
+    "path": "/Users/pablomaciasmunoz/Dev/WS_TFG/S2T_AudioProcess/resources/audio/out/audio_5m/2.wav",
+    "start_time": 12.287,
+    "end_time": 16.563
+  },
+  {
+    "path": "/Users/pablomaciasmunoz/Dev/WS_TFG/S2T_AudioProcess/resources/audio/out/audio_5m/3.wav",
+    "start_time": 17.033,
+    "end_time": 21.561
+  },
+  {
+    "path": "/Users/pablomaciasmunoz/Dev/WS_TFG/S2T_AudioProcess/resources/audio/out/audio_5m/4.wav",
+    "start_time": 22.056,
+    "end_time": 31.9
+  },
+  {
+    "path": "/Users/pablomaciasmunoz/Dev/WS_TFG/S2T_AudioProcess/resources/audio/out/audio_5m/5.wav",
+    "start_time": 32.152,
+    "end_time": 36.746
+  },
+  {
+    "path": "/Users/pablomaciasmunoz/Dev/WS_TFG/S2T_AudioProcess/resources/audio/out/audio_5m/6.wav",
+    "start_time": 37.298,
+    "end_time": 39.89
+  },
+  {
+    "path": "/Users/pablomaciasmunoz/Dev/WS_TFG/S2T_AudioProcess/resources/audio/out/audio_5m/7.wav",
+    "start_time": 40.296,
+    "end_time": 40.984
+  },
+  {
+    "path": "/Users/pablomaciasmunoz/Dev/WS_TFG/S2T_AudioProcess/resources/audio/out/audio_5m/8.wav",
+    "start_time": 41.312,
+    "end_time": 47.249
+  },
+  {
+    "path": "/Users/pablomaciasmunoz/Dev/WS_TFG/S2T_AudioProcess/resources/audio/out/audio_5m/9.wav",
+    "start_time": 47.544,
+    "end_time": 52.642
+  },
+  {
+    "path": "/Users/pablomaciasmunoz/Dev/WS_TFG/S2T_AudioProcess/resources/audio/out/audio_5m/10.wav",
+    "start_time": 53.087,
+    "end_time": 59.959
+  },
+  {
+    "path": "/Users/pablomaciasmunoz/Dev/WS_TFG/S2T_AudioProcess/resources/audio/out/audio_5m/11.wav",
+    "start_time": 60.391,
+    "end_time": 70.189
+  },
+  {
+    "path": "/Users/pablomaciasmunoz/Dev/WS_TFG/S2T_AudioProcess/resources/audio/out/audio_5m/12.wav",
+    "start_time": 70.622,
+    "end_time": 75.255
+  },
+  {
+    "path": "/Users/pablomaciasmunoz/Dev/WS_TFG/S2T_AudioProcess/resources/audio/out/audio_5m/13.wav",
+    "start_time": 75.685,
+    "end_time": 77.874
+  },
+  {
+    "path": "/Users/pablomaciasmunoz/Dev/WS_TFG/S2T_AudioProcess/resources/audio/out/audio_5m/14.wav",
+    "start_time": 78.633,
+    "end_time": 85.519
+  },
+  {
+    "path": "/Users/pablomaciasmunoz/Dev/WS_TFG/S2T_AudioProcess/resources/audio/out/audio_5m/15.wav",
+    "start_time": 85.965,
+    "end_time": 88.009
+  },
+  {
+    "path": "/Users/pablomaciasmunoz/Dev/WS_TFG/S2T_AudioProcess/resources/audio/out/audio_5m/16.wav",
+    "start_time": 88.393,
+    "end_time": 98.96
+  },
+  {
+    "path": "/Users/pablomaciasmunoz/Dev/WS_TFG/S2T_AudioProcess/resources/audio/out/audio_5m/17.wav",
+    "start_time": 99.394,
+    "end_time": 100.031
+  },
+  {
+    "path": "/Users/pablomaciasmunoz/Dev/WS_TFG/S2T_AudioProcess/resources/audio/out/audio_5m/18.wav",
+    "start_time": 100.483,
+    "end_time": 107.481
+  },
+  {
+    "path": "/Users/pablomaciasmunoz/Dev/WS_TFG/S2T_AudioProcess/resources/audio/out/audio_5m/19.wav",
+    "start_time": 107.968,
+    "end_time": 112.834
+  },
+  {
+    "path": "/Users/pablomaciasmunoz/Dev/WS_TFG/S2T_AudioProcess/resources/audio/out/audio_5m/20.wav",
+    "start_time": 113.223,
+    "end_time": 114.472
+  },
+  {
+    "path": "/Users/pablomaciasmunoz/Dev/WS_TFG/S2T_AudioProcess/resources/audio/out/audio_5m/21.wav",
+    "start_time": 114.844,
+    "end_time": 119.013
+  },
+  {
+    "path": "/Users/pablomaciasmunoz/Dev/WS_TFG/S2T_AudioProcess/resources/audio/out/audio_5m/22.wav",
+    "start_time": 119.754,
+    "end_time": 120.697
+  },
+  {
+    "path": "/Users/pablomaciasmunoz/Dev/WS_TFG/S2T_AudioProcess/resources/audio/out/audio_5m/23.wav",
+    "start_time": 121.025,
+    "end_time": 122.533
+  },
+  {
+    "path": "/Users/pablomaciasmunoz/Dev/WS_TFG/S2T_AudioProcess/resources/audio/out/audio_5m/24.wav",
+    "start_time": 122.914,
+    "end_time": 124.413
+  },
+  {
+    "path": "/Users/pablomaciasmunoz/Dev/WS_TFG/S2T_AudioProcess/resources/audio/out/audio_5m/25.wav",
+    "start_time": 124.674,
+    "end_time": 125.418
+  },
+  {
+    "path": "/Users/pablomaciasmunoz/Dev/WS_TFG/S2T_AudioProcess/resources/audio/out/audio_5m/26.wav",
+    "start_time": 125.945,
+    "end_time": 128.627
+  },
+  {
+    "path": "/Users/pablomaciasmunoz/Dev/WS_TFG/S2T_AudioProcess/resources/audio/out/audio_5m/27.wav",
+    "start_time": 128.883,
+    "end_time": 129.155
+  },
+  {
+    "path": "/Users/pablomaciasmunoz/Dev/WS_TFG/S2T_AudioProcess/resources/audio/out/audio_5m/28.wav",
+    "start_time": 130.096,
+    "end_time": 130.885
+  },
+  {
+    "path": "/Users/pablomaciasmunoz/Dev/WS_TFG/S2T_AudioProcess/resources/audio/out/audio_5m/29.wav",
+    "start_time": 131.252,
+    "end_time": 131.982
+  },
+  {
+    "path": "/Users/pablomaciasmunoz/Dev/WS_TFG/S2T_AudioProcess/resources/audio/out/audio_5m/30.wav",
+    "start_time": 132.237,
+    "end_time": 132.756
+  },
+  {
+    "path": "/Users/pablomaciasmunoz/Dev/WS_TFG/S2T_AudioProcess/resources/audio/out/audio_5m/31.wav",
+    "start_time": 133.027,
+    "end_time": 134.413
+  },
+  {
+    "path": "/Users/pablomaciasmunoz/Dev/WS_TFG/S2T_AudioProcess/resources/audio/out/audio_5m/32.wav",
+    "start_time": 135.004,
+    "end_time": 137.331
+  },
+  {
+    "path": "/Users/pablomaciasmunoz/Dev/WS_TFG/S2T_AudioProcess/resources/audio/out/audio_5m/33.wav",
+    "start_time": 137.953,
+    "end_time": 147.126
+  },
+  {
+    "path": "/Users/pablomaciasmunoz/Dev/WS_TFG/S2T_AudioProcess/resources/audio/out/audio_5m/34.wav",
+    "start_time": 147.505,
+    "end_time": 148.704
+  },
+  {
+    "path": "/Users/pablomaciasmunoz/Dev/WS_TFG/S2T_AudioProcess/resources/audio/out/audio_5m/35.wav",
+    "start_time": 149.421,
+    "end_time": 160.444
+  },
+  {
+    "path": "/Users/pablomaciasmunoz/Dev/WS_TFG/S2T_AudioProcess/resources/audio/out/audio_5m/36.wav",
+    "start_time": 160.849,
+    "end_time": 162.833
+  },
+  {
+    "path": "/Users/pablomaciasmunoz/Dev/WS_TFG/S2T_AudioProcess/resources/audio/out/audio_5m/37.wav",
+    "start_time": 163.208,
+    "end_time": 164.524
+  },
+  {
+    "path": "/Users/pablomaciasmunoz/Dev/WS_TFG/S2T_AudioProcess/resources/audio/out/audio_5m/38.wav",
+    "start_time": 164.877,
+    "end_time": 171.474
+  },
+  {
+    "path": "/Users/pablomaciasmunoz/Dev/WS_TFG/S2T_AudioProcess/resources/audio/out/audio_5m/39.wav",
+    "start_time": 171.867,
+    "end_time": 175.4
+  },
+  {
+    "path": "/Users/pablomaciasmunoz/Dev/WS_TFG/S2T_AudioProcess/resources/audio/out/audio_5m/40.wav",
+    "start_time": 175.866,
+    "end_time": 179.438
+  },
+  {
+    "path": "/Users/pablomaciasmunoz/Dev/WS_TFG/S2T_AudioProcess/resources/audio/out/audio_5m/41.wav",
+    "start_time": 179.836,
+    "end_time": 180.562
+  },
+  {
+    "path": "/Users/pablomaciasmunoz/Dev/WS_TFG/S2T_AudioProcess/resources/audio/out/audio_5m/42.wav",
+    "start_time": 180.813,
+    "end_time": 182.905
+  },
+  {
+    "path": "/Users/pablomaciasmunoz/Dev/WS_TFG/S2T_AudioProcess/resources/audio/out/audio_5m/43.wav",
+    "start_time": 184.144,
+    "end_time": 197.819
+  },
+  {
+    "path": "/Users/pablomaciasmunoz/Dev/WS_TFG/S2T_AudioProcess/resources/audio/out/audio_5m/44.wav",
+    "start_time": 198.246,
+    "end_time": 202.246
+  },
+  {
+    "path": "/Users/pablomaciasmunoz/Dev/WS_TFG/S2T_AudioProcess/resources/audio/out/audio_5m/45.wav",
+    "start_time": 202.654,
+    "end_time": 205.522
+  },
+  {
+    "path": "/Users/pablomaciasmunoz/Dev/WS_TFG/S2T_AudioProcess/resources/audio/out/audio_5m/46.wav",
+    "start_time": 206.207,
+    "end_time": 212.026
+  },
+  {
+    "path": "/Users/pablomaciasmunoz/Dev/WS_TFG/S2T_AudioProcess/resources/audio/out/audio_5m/47.wav",
+    "start_time": 212.313,
+    "end_time": 214.241
+  },
+  {
+    "path": "/Users/pablomaciasmunoz/Dev/WS_TFG/S2T_AudioProcess/resources/audio/out/audio_5m/48.wav",
+    "start_time": 214.541,
+    "end_time": 219.285
+  },
+  {
+    "path": "/Users/pablomaciasmunoz/Dev/WS_TFG/S2T_AudioProcess/resources/audio/out/audio_5m/49.wav",
+    "start_time": 219.749,
+    "end_time": 221.495
+  },
+  {
+    "path": "/Users/pablomaciasmunoz/Dev/WS_TFG/S2T_AudioProcess/resources/audio/out/audio_5m/50.wav",
+    "start_time": 221.827,
+    "end_time": 221.828
+  },
+  {
+    "path": "/Users/pablomaciasmunoz/Dev/WS_TFG/S2T_AudioProcess/resources/audio/out/audio_5m/51.wav",
+    "start_time": 222.725,
+    "end_time": 224.689
+  },
+  {
+    "path": "/Users/pablomaciasmunoz/Dev/WS_TFG/S2T_AudioProcess/resources/audio/out/audio_5m/52.wav",
+    "start_time": 224.955,
+    "end_time": 225.382
+  },
+  {
+    "path": "/Users/pablomaciasmunoz/Dev/WS_TFG/S2T_AudioProcess/resources/audio/out/audio_5m/53.wav",
+    "start_time": 225.723,
+    "end_time": 239.507
+  },
+  {
+    "path": "/Users/pablomaciasmunoz/Dev/WS_TFG/S2T_AudioProcess/resources/audio/out/audio_5m/54.wav",
+    "start_time": 239.936,
+    "end_time": 243.337
+  },
+  {
+    "path": "/Users/pablomaciasmunoz/Dev/WS_TFG/S2T_AudioProcess/resources/audio/out/audio_5m/55.wav",
+    "start_time": 243.832,
+    "end_time": 246.895
+  },
+  {
+    "path": "/Users/pablomaciasmunoz/Dev/WS_TFG/S2T_AudioProcess/resources/audio/out/audio_5m/56.wav",
+    "start_time": 247.732,
+    "end_time": 264.84
+  },
+  {
+    "path": "/Users/pablomaciasmunoz/Dev/WS_TFG/S2T_AudioProcess/resources/audio/out/audio_5m/57.wav",
+    "start_time": 265.115,
+    "end_time": 266.206
+  },
+  {
+    "path": "/Users/pablomaciasmunoz/Dev/WS_TFG/S2T_AudioProcess/resources/audio/out/audio_5m/58.wav",
+    "start_time": 266.492,
+    "end_time": 267.713
+  },
+  {
+    "path": "/Users/pablomaciasmunoz/Dev/WS_TFG/S2T_AudioProcess/resources/audio/out/audio_5m/59.wav",
+    "start_time": 268.034,
+    "end_time": 268.616
+  },
+  {
+    "path": "/Users/pablomaciasmunoz/Dev/WS_TFG/S2T_AudioProcess/resources/audio/out/audio_5m/60.wav",
+    "start_time": 269.053,
+    "end_time": 272.276
+  },
+  {
+    "path": "/Users/pablomaciasmunoz/Dev/WS_TFG/S2T_AudioProcess/resources/audio/out/audio_5m/61.wav",
+    "start_time": 272.641,
+    "end_time": 281.267
+  },
+  {
+    "path": "/Users/pablomaciasmunoz/Dev/WS_TFG/S2T_AudioProcess/resources/audio/out/audio_5m/62.wav",
+    "start_time": 281.623,
+    "end_time": 289.592
+  },
+  {
+    "path": "/Users/pablomaciasmunoz/Dev/WS_TFG/S2T_AudioProcess/resources/audio/out/audio_5m/63.wav",
+    "start_time": 290.049,
+    "end_time": 292.662
+  },
+  {
+    "path": "/Users/pablomaciasmunoz/Dev/WS_TFG/S2T_AudioProcess/resources/audio/out/audio_5m/64.wav",
+    "start_time": 293.049,
+    "end_time": 299.473
+  }
+]
