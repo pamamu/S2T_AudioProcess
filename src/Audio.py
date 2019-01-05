@@ -71,8 +71,11 @@ class Audio:
         :return:
         """
         apply_filters(self.raw_audio)
+        print("\t\tFILTROS OK")
         normalize_audio(self.raw_audio)
+        print("\t\tNORMALIZACION OK")
         noise_removal(self.raw_audio)
+        print("\t\tREDUCCION DE RUIDO OK")
 
     def split_audio(self):
         """

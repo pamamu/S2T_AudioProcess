@@ -1,5 +1,5 @@
 {
-  "tmp_folder": "resources/audio/tmp",
+  "tmp_folder": "resources/tmp",
   "allowed_extensions": [
     "aiff",
     "flac",
