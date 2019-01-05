@@ -121,6 +121,13 @@ def folder_to_dict(path, max_depth) -> dict:
 
 
 def move_files(files, folder, audio_name):
+    """
+    TODO DOCUMENTATION
+    :param files:
+    :param folder:
+    :param audio_name:
+    :return:
+    """
     check_folder(folder, True)
     clean_folder(os.path.join(folder, audio_name))
     check_folder(os.path.join(folder, audio_name), True)
@@ -134,6 +141,13 @@ def move_files(files, folder, audio_name):
 
 
 def save_json(info, folder, audio_name):
+    """
+    TODO DOCUMENTATION
+    :param info:
+    :param folder:
+    :param audio_name:
+    :return:
+    """
     check_folder(os.path.join(folder, audio_name), True)
     out_file = os.path.join(folder, audio_name, 'info.json')
     with open(out_file, 'w') as fp:
@@ -141,9 +155,18 @@ def save_json(info, folder, audio_name):
 
 
 def clean_folder(folder) -> None:
+    """
+    TODO DOCUMENTATION
+    :param folder:
+    :return:
+    """
     if os.path.isdir(folder):
         shutil.rmtree(folder)
 
 
 def clean_tmp_folder() -> None:
+    """
+    TODO DOCUMENTATION
+    :return:
+    """
     shutil.rmtree(get_tmp_folder())

@@ -1,0 +1,27 @@
+[
+  {
+    "path": "/Users/pablomaciasmunoz/Dev/WS_TFG/S2T_AudioProcess/resources/audio/out/audio_30s/0.wav",
+    "start_time": 0.0,
+    "end_time": 2.542
+  },
+  {
+    "path": "/Users/pablomaciasmunoz/Dev/WS_TFG/S2T_AudioProcess/resources/audio/out/audio_30s/1.wav",
+    "start_time": 2.797,
+    "end_time": 11.91
+  },
+  {
+    "path": "/Users/pablomaciasmunoz/Dev/WS_TFG/S2T_AudioProcess/resources/audio/out/audio_30s/2.wav",
+    "start_time": 12.287,
+    "end_time": 16.563
+  },
+  {
+    "path": "/Users/pablomaciasmunoz/Dev/WS_TFG/S2T_AudioProcess/resources/audio/out/audio_30s/3.wav",
+    "start_time": 17.033,
+    "end_time": 21.561
+  },
+  {
+    "path": "/Users/pablomaciasmunoz/Dev/WS_TFG/S2T_AudioProcess/resources/audio/out/audio_30s/4.wav",
+    "start_time": 22.045,
+    "end_time": 29.95
+  }
+]
