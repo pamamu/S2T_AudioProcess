@@ -152,6 +152,7 @@ def save_json(info, folder, audio_name):
     out_file = os.path.join(folder, audio_name, 'info.json')
     with open(out_file, 'w') as fp:
         json.dump(info, fp, indent=2)
+    return out_file
 
 
 def clean_folder(folder) -> None:

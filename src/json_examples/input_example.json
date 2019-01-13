@@ -1,66 +1,7 @@
-[
-  {
-    "audio_path": "/Users/pablomaciasmunoz/Dev/WS_TFG/S2T_AudioProcess/resources/audio/original/audio_30s.mp3",
-    "output_folder": "/Users/pablomaciasmunoz/Dev/WS_TFG/S2T_AudioProcess/resources/audio/out",
-    "output_samplerate": 16000,
-    "output_n_channels": 1,
-    "output_bitdepth": 16,
-    "output_format": "wav"
-  },
-  {
-    "audio_path": "/Users/pablomaciasmunoz/Dev/WS_TFG/S2T_AudioProcess/resources/audio/original/audio_60s.mp3",
-    "output_folder": "/Users/pablomaciasmunoz/Dev/WS_TFG/S2T_AudioProcess/resources/audio/out",
-    "output_samplerate": 16000,
-    "output_n_channels": 1,
-    "output_bitdepth": 16,
-    "output_format": "wav"
-  },
-  {
-    "audio_path": "/Users/pablomaciasmunoz/Dev/WS_TFG/S2T_AudioProcess/resources/audio/original/audio_5m.mp3",
-    "output_folder": "/Users/pablomaciasmunoz/Dev/WS_TFG/S2T_AudioProcess/resources/audio/out",
-    "output_samplerate": 16000,
-    "output_n_channels": 1,
-    "output_bitdepth": 16,
-    "output_format": "wav"
-  },
-  {
-    "audio_path": "/Users/pablomaciasmunoz/Dev/WS_TFG/S2T_AudioProcess/resources/audio/original/audio_10m.mp3",
-    "output_folder": "/Users/pablomaciasmunoz/Dev/WS_TFG/S2T_AudioProcess/resources/audio/out",
-    "output_samplerate": 16000,
-    "output_n_channels": 1,
-    "output_bitdepth": 16,
-    "output_format": "wav"
-  },
-  {
-    "audio_path": "/Users/pablomaciasmunoz/Dev/WS_TFG/S2T_AudioProcess/resources/audio/original/audio_15m.mp3",
-    "output_folder": "/Users/pablomaciasmunoz/Dev/WS_TFG/S2T_AudioProcess/resources/audio/out",
-    "output_samplerate": 16000,
-    "output_n_channels": 1,
-    "output_bitdepth": 16,
-    "output_format": "wav"
-  },
-  {
-    "audio_path": "/Users/pablomaciasmunoz/Dev/WS_TFG/S2T_AudioProcess/resources/audio/original/audio_30m.mp3",
-    "output_folder": "/Users/pablomaciasmunoz/Dev/WS_TFG/S2T_AudioProcess/resources/audio/out",
-    "output_samplerate": 16000,
-    "output_n_channels": 1,
-    "output_bitdepth": 16,
-    "output_format": "wav"
-  },
-  {
-    "audio_path": "/Users/pablomaciasmunoz/Dev/WS_TFG/S2T_AudioProcess/resources/audio/original/audio_45m.mp3",
-    "output_folder": "/Users/pablomaciasmunoz/Dev/WS_TFG/S2T_AudioProcess/resources/audio/out",
-    "output_samplerate": 16000,
-    "output_n_channels": 1,
-    "output_bitdepth": 16,
-    "output_format": "wav"
-  },
-  {
-    "audio_path": "/Users/pablomaciasmunoz/Dev/WS_TFG/S2T_AudioProcess/resources/audio/original/audio_full.mp3",
-    "output_folder": "/Users/pablomaciasmunoz/Dev/WS_TFG/S2T_AudioProcess/resources/audio/out",
-    "output_samplerate": 16000,
-    "output_n_channels": 1,
-    "output_bitdepth": 16,
-    "output_format": "wav"
-  }
-]
+{
+  "audio_path": "/Users/pablomaciasmunoz/Dev/WS_TFG/S2T_AudioProcess/resources/audio/original/audio_30s.mp3",
+  "output_samplerate": 16000,
+  "output_n_channels": 1,
+  "output_bitdepth": 16,
+  "output_format": "wav"
+}
