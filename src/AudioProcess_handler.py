@@ -22,6 +22,7 @@ class AudioProcessHandler(ContainerHandler):
         pass
 
     def info(self):
+        # TODO IMPLEMENTATION
         pass
 
     def process_audio(self, input_data, output_folder):
