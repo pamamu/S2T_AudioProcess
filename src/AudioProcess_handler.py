@@ -1,7 +1,7 @@
 import Pyro4
 
 from ContainerHandler import ContainerHandler
-from src.Audio import Audio
+from Audio import Audio
 
 
 @Pyro4.expose
