@@ -2,6 +2,7 @@ import Pyro4
 
 from ContainerHandler import ContainerHandler
 from Audio import Audio
+from utils.IO import read_json
 
 
 @Pyro4.expose
@@ -26,7 +27,8 @@ class AudioProcessHandler(ContainerHandler):
         pass
 
     def process_audio(self, input_data, output_folder):
-        audio = Audio(data=input_data, output_folder=output_folder)
+
+        audio = Audio(data=read_json(input_data), output_folder=output_folder)
         print("BEGIN")
         audio.check_up()
         print("\tPREPROCESADO")
@@ -35,3 +37,8 @@ class AudioProcessHandler(ContainerHandler):
         audio.split_audio()
         print("\tAUDIO SPLITTED")
         return audio.process_output()
+
+
+if __name__ == '__main__':
+    a = AudioProcessHandler("AudioProcess", "PYRO:MainController@localhost:4040")
+    a.run(input_json="src/json_examples/input_example.json", output_folder="/srv/shared_folder")

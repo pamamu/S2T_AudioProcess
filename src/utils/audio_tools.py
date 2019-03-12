@@ -194,7 +194,7 @@ def split_audio(origin_path, periods=[]) -> list:
     """
     original_audio = AudioSegment.from_wav(origin_path)
     original_audio_splited = list(original_audio[::1])
-    print(len(original_audio_splited))
+    # print(len(original_audio_splited))
     if len(periods) == 0:
         min_silence_duration = get_audio_config()['min_silence_duration']
         max_silence_level = get_audio_config()['max_silence_level']

@@ -1,5 +1,5 @@
 {
-  "audio_path": "/Users/pablomaciasmunoz/Dev/WS_TFG/S2T_AudioProcess/resources/audio/original/audio_30s.mp3",
+  "audio_path": "resources/audio/original/audio_5m.mp3",
   "output_samplerate": 16000,
   "output_n_channels": 1,
   "output_bitdepth": 16,
