@@ -2,6 +2,7 @@ import os.path
 import re
 import json
 import shutil
+import socket
 
 
 def get_io_config() -> dict:
@@ -194,3 +195,11 @@ def read_json(path):
     with open(path) as f:
         data = json.load(f)
     return data
+
+
+def get_ip():
+    """
+    TODO DOCUMENTATION
+    :return:
+    """
+    return socket.gethostbyname(socket.gethostname())
