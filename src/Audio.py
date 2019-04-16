@@ -12,20 +12,19 @@ from utils.audio_tools import convert_audio, get_working_format, apply_filters, 
 class Audio:
 
     def __init__(self,
+                 output_folder,
                  audio_path=None,
                  output_samplerate=None,
                  output_n_channels=None,
                  output_bitdepth=None,
                  output_format=None,
-                 output_folder=None,
                  data=None):
 
         required_params = ['audio_path',
                            'output_samplerate',
                            'output_n_channels',
                            'output_bitdepth',
-                           'output_format',
-                           'output_folder']
+                           'output_format']
         pre = ""
         if bool(data):
             for key, value in data.items():
@@ -41,7 +40,8 @@ class Audio:
             self.output_n_channels = output_n_channels
             self.output_bitdepth = output_bitdepth
             self.output_format = output_format
-            self.output_folder = output_folder
+
+        self.output_folder = output_folder
 
         clean_tmp_folder()
         self.raw_audio = ""
@@ -97,4 +97,4 @@ class Audio:
         destination_json = save_json(out, self.output_folder, self.audio_name)
         clean_tmp_folder()
         print("PROCESAR SALIDA")
-        pass
+        return destination_json

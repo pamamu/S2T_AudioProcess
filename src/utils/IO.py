@@ -2,6 +2,7 @@ import os.path
 import re
 import json
 import shutil
+import socket
 
 
 def get_io_config() -> dict:
@@ -152,6 +153,7 @@ def save_json(info, folder, audio_name):
     out_file = os.path.join(folder, audio_name, 'info.json')
     with open(out_file, 'w') as fp:
         json.dump(info, fp, indent=2)
+    return out_file
 
 
 def clean_folder(folder) -> None:
@@ -170,3 +172,34 @@ def clean_tmp_folder() -> None:
     :return:
     """
     shutil.rmtree(get_tmp_folder())
+
+
+def check_file(path):
+    """
+    TODO DOCUMENTATION
+    :param path:
+    :return:
+    """
+    if not os.path.isfile(path):
+        raise FileNotFoundError("File not found")
+    return open(path)
+
+
+def read_json(path):
+    """
+    TODO DOCUMENTATION
+    :param path:
+    :return:
+    """
+    check_file(path)
+    with open(path) as f:
+        data = json.load(f)
+    return data
+
+
+def get_ip():
+    """
+    TODO DOCUMENTATION
+    :return:
+    """
+    return socket.gethostbyname(socket.gethostname())
