@@ -1,8 +1,11 @@
+import sys
+
 import Pyro4
 
 from ContainerHandler import ContainerHandler
 from Audio import Audio
 from utils.IO import read_json
+import time
 
 
 @Pyro4.expose
@@ -31,11 +34,17 @@ class AudioProcessHandler(ContainerHandler):
         audio = Audio(data=read_json(input_data), output_folder=output_folder)
         print("BEGIN")
         audio.check_up()
+
         print("\tPREPROCESADO")
         audio.clean_audio()
-        print("\tAUDIO LIMPIO")
+
+        print("\tAUDIO LIMPIO", end="")
+        sys.stdout.flush()
+        start = time.time()
         audio.split_audio()
-        print("\tAUDIO SPLITTED")
+        print(" OK - {}".format(time.time() - start))
+
+        print("\tAUDIO SPLITTED", end="")
         return audio.process_output()
 
 

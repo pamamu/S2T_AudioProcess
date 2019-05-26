@@ -2,6 +2,7 @@
 TODO DOCUMENTATION
 """
 
+import time
 from os import path
 
 from utils.IO import check_audio_file, get_tmp_folder, clean_tmp_folder, move_files, save_json
@@ -70,12 +71,13 @@ class Audio:
         TODO DOCUMENTATION
         :return:
         """
+        start = time.time()
         apply_filters(self.raw_audio)
-        print("\t\tFILTROS OK")
+        print("\t\tFILTROS OK - {}".format(time.time() - start))
         normalize_audio(self.raw_audio)
-        print("\t\tNORMALIZACION OK")
+        print("\t\tNORMALIZACION OK - {}".format(time.time() - start))
         noise_removal(self.raw_audio)
-        print("\t\tREDUCCION DE RUIDO OK")
+        print("\t\tREDUCCION DE RUIDO OK - {}".format(time.time() - start))
 
     def split_audio(self):
         """
@@ -89,6 +91,7 @@ class Audio:
         TODO DOCUMENTATION
         :return:
         """
+        start = time.time()
         destination_paths = move_files(self.audio_paths, self.output_folder, self.audio_name)
         out = [{'path': audio_path,
                 'start_time': info[0] / 1000,
@@ -96,5 +99,6 @@ class Audio:
                 } for audio_path, info in zip(destination_paths, self.info_audios)]
         destination_json = save_json(out, self.output_folder, self.audio_name)
         clean_tmp_folder()
+        print(" OK - {}".format(time.time() - start))
         print("PROCESAR SALIDA")
         return destination_json
