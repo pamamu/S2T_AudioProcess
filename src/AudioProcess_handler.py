@@ -32,13 +32,16 @@ class AudioProcessHandler(ContainerHandler):
     def process_audio(self, input_data, output_folder):
 
         audio = Audio(data=read_json(input_data), output_folder=output_folder)
-        print("BEGIN")
+        print("BEGIN", end="")
+
+        start = time.time()
         audio.check_up()
+        print(" OK - {}".format(time.time() - start))
 
         print("\tPREPROCESADO")
         audio.clean_audio()
 
-        print("\tAUDIO LIMPIO", end="")
+        print("\tAUDIO LIMPIO ", end="")
         sys.stdout.flush()
         start = time.time()
         audio.split_audio()

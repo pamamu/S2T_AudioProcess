@@ -43,6 +43,7 @@ class Audio:
             self.output_format = output_format
 
         self.output_folder = output_folder
+        print(path.basename(self.audio_path))
 
         clean_tmp_folder()
         self.raw_audio = ""
@@ -74,8 +75,10 @@ class Audio:
         start = time.time()
         apply_filters(self.raw_audio)
         print("\t\tFILTROS OK - {}".format(time.time() - start))
+        start = time.time()
         normalize_audio(self.raw_audio)
         print("\t\tNORMALIZACION OK - {}".format(time.time() - start))
+        start = time.time()
         noise_removal(self.raw_audio)
         print("\t\tREDUCCION DE RUIDO OK - {}".format(time.time() - start))
 
