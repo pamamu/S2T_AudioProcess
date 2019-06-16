@@ -1,0 +1,10 @@
+{
+  "tmp_folder": "resources/tmp",
+  "allowed_extensions": [
+    "aiff",
+    "flac",
+    "mp3",
+    "ogg",
+    "wav"
+  ]
+}
