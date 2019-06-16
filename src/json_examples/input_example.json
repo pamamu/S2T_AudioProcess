@@ -1,5 +1,5 @@
 {
-  "audio_path": "resources/audio/original/audio_5m.mp3",
+  "audio_path": "/srv/shared_folder/audios/cadenaser_elfaro_20190313_013000_040000_2.wav",
   "output_samplerate": 16000,
   "output_n_channels": 1,
   "output_bitdepth": 16,

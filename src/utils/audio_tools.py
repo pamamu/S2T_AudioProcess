@@ -1,9 +1,9 @@
 import json
 import os
+import gc
 
 import sox
 from pydub import AudioSegment
-from pydub.playback import play
 
 from utils.IO import get_tmp_folder, get_tmp_splitted_folder
 
@@ -118,6 +118,7 @@ def noise_removal(origin_path, destination_path="", return_json=True):
     :param destination_path:
     :return:
     """
+    gc.collect()
     if destination_path == "":
         destination_path = origin_path
 
@@ -128,7 +129,6 @@ def noise_removal(origin_path, destination_path="", return_json=True):
     max_noise_duration = get_audio_config()['max_noise_duration']
     max_noise_level = get_audio_config()['max_noise_level']
     aux_noise = []
-
     for i, chunk in enumerate(original_audio_splited):
         data = (i, chunk)
         if chunk.dBFS > max_noise_level:
@@ -138,22 +138,16 @@ def noise_removal(origin_path, destination_path="", return_json=True):
                 audio_chunks += aux_noise
             aux_noise.clear()
             audio_chunks.append(data)
-
         else:  # SILENCE
             aux_noise.append(data)
+        if len(noise_chunks) > 100000:
+            break
 
     if len(aux_noise) > max_noise_duration:
         noise_chunks += aux_noise
     else:
         audio_chunks += aux_noise
-
-    # try:
-    #     raw_audio = sum([*zip(*audio_chunks)][1], AudioSegment.empty())
-    # except IndexError:
-    #     raw_audio = AudioSegment.empty()
-    # raw_audio_path = os.path.join(get_tmp_folder(), 'raw_audio.wav')
-    # raw_audio.export(raw_audio_path, format='wav')
-
+    gc.collect()
     try:
         raw_noise = sum([*zip(*noise_chunks)][1], AudioSegment.empty())
     except IndexError:
@@ -168,6 +162,7 @@ def noise_removal(origin_path, destination_path="", return_json=True):
     noise_remove = sox.Transformer()
     noise_tolerance = get_audio_config()['noise_tolerance']
     noise_remove.noisered(noise_prof_path, noise_tolerance)
+    gc.collect()
 
     if destination_path == origin_path:
         destination_path_splited = os.path.splitext(destination_path)
@@ -192,17 +187,21 @@ def split_audio(origin_path, periods=[]) -> list:
     :param periods:
     :return:
     """
+    gc.collect()
     original_audio = AudioSegment.from_wav(origin_path)
     original_audio_splited = list(original_audio[::1])
-    # print(len(original_audio_splited))
+    del original_audio
+    gc.collect()
     if len(periods) == 0:
         min_silence_duration = get_audio_config()['min_silence_duration']
         max_silence_level = get_audio_config()['max_silence_level']
 
         audio_chunks = []
         aux_silence = []
-
+        # corte = int(len(original_audio_splited) / 50)
         for i, chunk in enumerate(original_audio_splited):
+            # if i % corte == 0:
+            #     print(i / corte, "%")
             if chunk.dBFS > max_silence_level:
                 if len(aux_silence) < min_silence_duration:
                     audio_chunks += aux_silence
@@ -220,7 +219,6 @@ def split_audio(origin_path, periods=[]) -> list:
                       groupby(audio_chunks, key=lambda i, j=count(): i - next(j))]
         periods = [(l[0], l[-1]) for l in audio_list]
 
-
     audio_splited = [original_audio_splited[period[0]:period[1]] for period in periods]
 
     filenames = []
@@ -231,4 +229,5 @@ def split_audio(origin_path, periods=[]) -> list:
         filenames.append(filename)
         info.append(periods[i])
         audio_segment.export(filename, format='wav')
+    gc.collect()
     return filenames, info
